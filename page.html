@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>on katsudoベース</title>
+<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" >
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="css/onkatudo.css">    
+</head>
+
+<body>
+    
+    <!-- ハンバーガーアイコン  -->
+    <div class="hambarger--close" id="hambarger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+	
+    <!-- ハンバーガーアイコンが閉じているとき（3本線のとき） -->
+	<nav class="hambarger--gnavi--close" id="hambarger--gnavi">
+        
+        <!-- ハンバーガーアイコンが開いたとき（×のとき画面に表示される） -->
+		<h1 class="hambarger--gnavi--open__title"><a href="old_index.html" class="hambarger--gnavi--open__link"><img src="images/logo.png" alt="" class="hambarger--gnavi--open__img"></a></h1>
+		<ul class="hambarger--gnavi--open__list" >
+            <li class="hambarger--gnavi--open__item"><a href="index.html" class="hambarger--gnavi--open__link">トップ</a></li>
+			<li class="hambarger--gnavi--open__item"><a href="lesson.html" class="hambarger--gnavi--open__link">講座案内</a></li>
+        	<li class="hambarger--gnavi--open__item"><a href="voice.html" class="hambarger--gnavi--open__link">生徒・卒業生の声</a></li>
+        	<li class="hambarger--gnavi--open__item"><a href="qa.html" class="hambarger--gnavi--open__link">Q &amp; A</a></li>
+        	<li class="hambarger--gnavi--open__item"><a href="contact.html" class="hambarger--gnavi--open__link">お問い合わせ</a></li>
+		</ul>
+	</nav>
+	
+   <!-- 画面の左側にSNSのアイコンを常に表示 -->
+    <div class="fixed--left">
+        <ul class="fixed--left__list">
+            <li class="fixed--left__item"><i class="fab fa-instagram fixed--left__fab"></i></li>
+            <li class="fixed--left__item"><i class="fab fa-twitter fixed--left__fab"></i></li>
+            <li class="fixed--left__item"><i class="fab fa-facebook fixed--left__fab"></i></li>
+        </ul>
+    </div>
+    
+	 <!-- topへ戻る -->
+    <div class="fixed--left--bottom--open" id="fixed--left--bottom">
+        <a href="#" class="fixed--left--bottom--open__link">
+        <p class="fixed--left--bottom--open__text">TOP</p>
+        <div class="fixed--left--bottom--open__arrow"></div>
+            </a>
+    </div>
+	
+    <!-- 画面の右側にお申込みアイコンを常に表示 -->
+    <div class="fixed--right--close" id="fixed--right">
+        <a href="contact.html" class="fixed--right--close__link"><img src="images/contact.png" alt="" class="fixed--right--close__img"></a>
+    </div>
+    
+    <!-- 一定値スクロールしたら画面上部に現れる固定ナビゲーション -->
+    <div class="fixed--top--close" id="fixed--top">
+			
+        <!-- 水滴なし -->
+			
+			  <h1 class="fixed--top--open__title">
+            <a href="old_index.html" class="fixed--top--open__link"><img src="images/logo.png" alt="" class="fixed--top--open__img"></a>
+        </h1>
+
+        <ul class="fixed--top--open__list">
+            <li class="fixed--top--open__item"><a href="lesson.html" class="fixed--top--open__link">講座案内</a></li>
+            <li class="fixed--top--open__item"><a href="voice.html" class="fixed--top--open__link">生徒・卒業生の声</a></li>
+            <li class="fixed--top--open__item"><a href="qa.html" class="fixed--top--open__link">Q &amp; A</a></li>
+            <li class="fixed--top--open__item"><a href="contact.html" class="fixed--top--open__link fixed--top--open__contact">お問い合わせ</a></li>
+        </ul>
+    </div> 
+    
+    
+    <!-- ヘッダー -->
+    <header class="header" id="header">
+        <h1 class="header__title">
+            <a href="old_index.html" class="header__link"><img src="images/logo.png" alt="" class="header__img"></a>
+        </h1>
+
+        <ul class="header__list">
+            <li class="header__item"><a href="lesson.html" class="header__link">講座案内</a></li>
+            <li class="header__item"><a href="voice.html" class="header__link">生徒・卒業生の声</a></li>
+            <li class="header__item"><a href="qa.html" class="header__link">Q &amp; A</a></li>
+            <li class="header__item"><a href="contact.html" class="header__link header__white">お問い合わせ</a></li>
+        </ul>
+    </header>
+	
+	<!-- 個別ページタイトル -->
+	<div class="pagetitle">
+		<div class="pagetitle__box">
+		<h1 class="pagetitle__title"><span>Q</span>&amp;A</h1>
+		<img class="pagetitle__img" src="images/title_QandA.png" alt="contact">
+		</div>
+		<img class="pagetitle__wave" src="images/personal_title_bg.png" alt="">
+		<img class="pagetitle__drop" src="images/all_bg_drop_pink.png" alt="">
+	</div>
+    
+    
+    <!-- 背景画像設定 -->
+	<div class="bg">
+		<div class="bg__wave1"></div>
+		<div class="bg__drop1"></div>
+		<div class="bg__wave2"></div>
+		<div class="bg__drop2"></div>
+	</div>
+	
+
+    
+    <!-- フッター -->
+	
+		 <!-- SNSなど -->
+	<div class="footerbox">
+    <div class="sns">
+        <div class="sns__box">
+        <a href="https://onkatsudo.com/" target="_blank" rel="noopener" class="sns__link"><img src="images/onkatsudo_logo.png" alt="" class="sns__logo"></a>
+        <p class="sns__text">温活セラピー「温活堂」のサイト</p>
+        
+        
+            <p class="sns__text">\follow us!/</p>
+            <div class="sns__flex">
+                <ul class="sns__list">
+                    <li class="sns__item"><i class="fab fa-instagram sns__fab"></i></li>
+                    <li class="sns__item"><i class="fab fa-twitter sns__fab"></i></li>
+                    <li class="sns__item"><i class="fab fa-facebook sns__fab"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+	
+    <footer class="footer">
+        <nav class="footer--gnavi">
+			<ul class="footer--gnavi__list">
+                <li class="footer--gnavi__item"><a href="old_index.html" class="footer--gnavi__link">トップ</a></li>
+				<li class="footer--gnavi__item"><a href="lesson.html" class="footer--gnavi__link">講座案内</a></li>
+				<li class="footer--gnavi__item"><a href="voice.html" class="footer--gnavi__link">生徒・卒業生の声</a></li>
+				<li class="footer--gnavi__item"><a href="qa.html" class="footer--gnavi__link">Q &amp; A</a></li>
+				<li class="footer--gnavi__item"><a href="contact.html" class="footer--gnavi__link">お問い合わせ</a></li>
+			</ul>
+		</nav>
+        
+        <!-- コピーライト -->
+        <p class="footer__copy">Copyright&copy; 2021 on-katsudo. all rights reserved.</p>
+        
+        <!-- 波紋なし -->
+        
+    </footer>
+    </div>
+    <!-- ハンバーガーアイコンなど -->
+    <script src="js/onkatudo.js"></script>
+    
+    <!-- スライドショー -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+    <script src="js/swiper.js"></script> -->
+</body>
+</html>

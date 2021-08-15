@@ -1,0 +1,197 @@
+@charset "utf-8";
+
+
+$pc: 769px;
+@mixin pc {  
+    @media (min-width:($pc)) {
+        @content; 
+    }
+}
+
+$yumi_font:'Shippori Mincho', serif;
+
+/*---------------------------------------------------------
+
+     個別ページcss
+
+--------------------------------*/
+
+/* 基本設定　*/
+body {
+	background-color: #FFEEEA;
+	color: #583C27;
+}
+
+/*-------------------------------
+
+ 一定数スクロールしたら出てくる固定ヘッダー
+
+--------------------------------*/
+.fixed--top--open{
+	&__img{
+		margin-left: -20px;
+	}
+	
+	&__list{
+		margin-left: -30px;
+	}
+}
+
+/*-------------------------------
+
+ 個別ページタイトル
+
+--------------------------------*/
+.pagetitle{
+	position: relative;
+	
+	&__box{
+		margin-left: 10%;
+		@include pc{
+		width: 1000px;
+		margin: 0 auto;
+		}
+	}
+	
+	&__title{
+		font-family: $yumi_font;
+		font-size: 32px;
+		font-weight: 600;
+		position: absolute;
+		z-index: 14;
+			top: 1em;
+		@include pc{
+		top: 100px;//224px;
+			font-size: 56px;
+		}
+		
+		span{
+			color: #FD8C90;
+		}
+	}
+	
+	&__img{
+		position: absolute;
+		z-index: 13;
+			top: 3rem;
+		margin-left: 5px;
+		width: 224px;
+		height: auto;
+		object-fit: contain;
+		@include pc{
+		top: 145px;
+		height: 206px;
+			width: auto;
+		margin-left: 10px;
+		}
+	}
+	
+	&__wave{
+		position: absolute;
+		z-index: -2;
+		right: 0;
+		left: 0;
+		top: 5rem;
+			object-fit: contain;
+			width: 100%;
+		max-width: 100%;
+			height: auto;
+		@include pc{
+		top: 73px;
+		}
+	}
+	
+	&__drop{
+			display: inline;
+		position: absolute;
+		z-index: -2;
+		top: 20em;
+		right: 0;
+		width: 88px;
+		height: 199px;
+		@include pc{
+		top: 246px;
+		right: 111px;
+			width: auto;
+			height: auto;
+		}
+	}
+}
+
+
+/*-------------------------------
+
+ 背景画像
+
+--------------------------------*/
+.bg{
+	&__wave1{
+		display: none;
+		@include pc{
+			display: inline;
+			width: 100%;
+		max-width: 100%;
+		height: auto;
+		 position: absolute;
+        top: 50em;
+        z-index: -1;
+		}
+	}
+	&__drop1{
+		display: none;
+		@include pc{
+			display: inline;
+		position: absolute;
+        top:70em;
+			left: 116px;
+        z-index: -2;
+		}
+	}
+	
+	&__wave2{
+		top: 150em;
+		 position: absolute;
+        z-index: -3;
+		max-width: 100%;
+		height: auto;
+			object-fit: cover;
+		@include pc{
+			height: 800px;
+		}
+		
+	}
+	
+	/*&__drop2{
+		position: absolute;
+		z-index: -4;
+		top: 184.875em;
+		right: 5px;
+		width: 90px;
+		height: 200px;
+		background-image: url("../images/all_bg_drop_pink.png");
+		background-size: auto 100%;
+    background-repeat: no-repeat;
+		@include pc{
+		height: 400px;
+		top: 215em;
+		width: 200px;
+			right: 10px;
+		}
+	}*/
+}
+
+
+/*------------
+
+    フッター
+
+--------------*/
+.footerbox{
+	margin-top: 3000px;
+}
+
+.sns{
+	background-color: transparent;
+}
+
+

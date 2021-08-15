@@ -1,0 +1,1017 @@
+@charset "utf-8";
+
+$pc: 769px;
+@mixin pc {  
+    @media (min-width:($pc)) {
+        @content; 
+    }
+}
+
+$yumi_font:'Shippori Mincho', serif;
+$noto_font: 'Noto Sans JP', sans-serif;
+
+#top{
+    font-family: $yumi_font;
+}
+/*-------------------------------
+
+ スライドショーの設定
+
+--------------------------------*/
+.slider{
+    position: relative;
+    background-color: #FFEEEA;
+    @include pc {
+        left:5%;
+    }
+    &__box {
+        z-index: 20;
+    	position: absolute;
+		width: 100%;
+    	height: 100%;
+    }
+    &__img {
+        width: 20%;
+        display: block;
+        position: absolute;
+        top: 15%;
+        left: 5%; 
+        @include pc {
+            width: 12%;
+            top: 20%;
+        }
+        &:nth-child(2){
+            //font-size: 14px;
+            //bottom: 10%;
+            //right: 55%;
+            top:25%;
+            left:10%;
+            }
+    }
+   	&__yellow{
+        display: none;
+        @include pc {
+            width: 30%;
+        display: block;
+        animation: yellow-anim 10s infinite;
+        position: absolute;
+        z-index: 10;
+        top:5%;
+        right:75%;
+        }
+	}
+    &__blue1 {
+        display: none;
+        @include pc {
+        display: block;
+        z-index: 20;
+        position: absolute;
+        width: 25%;
+        right: 5%;
+            top:50%;
+        //bottom: -20%;
+        animation: blue-anim 8s infinite;
+            }
+    }
+    &__white1 {
+        display: none;
+        @include pc {
+            z-index: 1;
+            display: block;
+            position: absolute;
+            width: 50%;
+            top:80%;
+            right:60%;
+            animation: white-anim 9s infinite;
+            }
+    }
+}
+//動く黄色丸アニメーション
+@keyframes yellow-anim {
+    0% {
+        transform: scale(1) skewY(0) translate(0px, 0px);
+    }
+    50% {
+        transform: scale(0.9) skewY(10deg) translate(0px, -60px);
+    }
+    100% {
+        transform: scale(1) skewY(0) translate(0px, 0px);
+    }
+}
+//動くあお丸のアニメーション
+@keyframes blue-anim {
+    0% {
+        transform: scale(1) skewY(0) translate(0px, 0px);
+    }
+    50% {
+        transform: scale(0.9) skewY(-10deg) translate(0px, -15px);
+    }
+    100% {
+        transform: scale(1) skewY(0) translate(0px, 0px);
+    }
+}
+//動くしろ丸アニメーション
+@keyframes white-anim {
+    0% {
+        transform: scale(1) skewY(0) translate(0px, 0px);
+    }
+    50% {
+        transform: scale(0.9) skewY(-8deg) translate(0px, -50px);
+    }
+    100% {
+        transform: scale(1) skewY(0) translate(0px, 0px);
+    }
+}
+.slider1 {
+    background: #FFEEEA;
+    width: 100%;
+    //height: auto;
+    @include pc {
+	clip-path: url(#clip01);
+   //border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;
+    }
+}
+.slider1 .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+/*    border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;*/
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider1 .swiper-slide img {
+    width: 100%;
+    height: auto;
+}
+.slider1_warapper{
+    width: 100%;
+    margin: 0 auto;
+}
+/*-------------------------------
+
+ 感染対策（info）
+
+--------------------------------*/
+.wave_top {
+    padding-top: 130px;
+    
+    &__wave1 {
+        top: 300px;
+    }
+    
+    &__wave2 {
+        top: 400px;
+    }
+}
+.info {
+    max-width: 568px;
+    box-shadow: 10px 10px #FFE5DF;
+    background-color: #fff;
+    padding: 20px 0 30px 0;
+    @include pc {
+        max-width: 1000px;
+        padding: 40px 0 60px 0;
+    }
+    &__title {
+        text-align: center;
+        margin-bottom: 35px;
+        font-size: 20px;
+        font-family: 'Yu Mincho';
+        font-weight:  600;
+    }
+    &__flex {
+
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+    &__box {
+        align-items: center;
+        max-width: 90px;
+        @include pc {
+            max-width: 230px;
+            display: flex;
+        }
+    }
+    &__img {
+        //
+        //height: 115px;
+        max-width: 115px;
+        max-height: 115px;
+        width: 100%;
+        border-radius: 50%;
+        background-color: #FFEEEA;
+    }
+    &__text {
+        padding: 0;
+        
+        @include pc {
+            width: 100%;
+        padding-left: 10px;
+        }
+    }
+    &__attention--sp {
+        max-width: 265px;
+        width: 75%;
+        background:linear-gradient(transparent 60%, #F8F4C1 0%);
+        margin: 0 auto;
+        @include pc {
+            display: none;
+        }
+    }
+        &__attention--pc {
+            display: none;
+            @include pc {
+                display: block;
+                max-width: 60%;
+                margin: 0 auto;
+                margin-top: 45px;
+                background:linear-gradient(transparent 60%, #F8F4C1 0%);
+            }
+    }
+}
+/*-------------------------------
+
+ コンセプト
+
+--------------------------------*/
+.concept {
+    position: relative;
+    //height: 860px;
+    margin-top: 150px;
+    background-image: url("../images/all_bg_drop_pink.png");
+    background-position: right 10% top 75%;
+    @include pc {
+        margin-top: 265px;
+    }
+    &__bg_concept {
+        z-index: 15;
+        width: 15%;
+        position: absolute;
+        left: 3%;
+        top: 45%;
+    }
+    &__title {
+        letter-spacing: 0.5rem;
+        writing-mode: vertical-rl;
+        font-weight: normal;
+        font-size: 28px;
+        margin: 0 auto;
+    }
+    &__textarea--pc {
+        display: none;
+        @include pc {
+            display: block;
+                    margin-right: auto;
+        margin-left: auto;
+        margin-top: 80px;
+        max-width: 700px;
+        }
+    }
+    &__textarea--sp {
+        max-width: 500px;
+        margin: 0 auto;
+        margin-top: 60px;
+        @include pc {
+            display: none;
+        }
+    }
+    &__text {
+        margin-bottom: 15px;
+        //max-width: 260px;
+        text-align: center;
+        font-size: 16px;
+        
+        @include pc {
+            margin-bottom: 0;
+            max-width: 690px;
+        font-size: 18px; 
+        }
+    }
+    &__big-bottom {
+        margin-bottom: 40px;
+    }
+    &__padding--bottom {
+        padding-bottom: 50px;
+    }
+    &__img--left {
+        position: absolute;
+        top: 50px;
+        left: -50px;
+        //z-index: -5;
+        max-width: 200px;
+        max-height: 200px;
+        //height: auto;
+        border-radius: 50%;
+        box-shadow: 20px 20px #F8F4C1;
+        @include pc {
+            max-width: 500px;
+            max-height: 500px;
+            width: 35%;
+        top:0;
+        left:-100px;
+        box-shadow: 30px 30px #F8F4C1;
+            }
+    }
+    &__img--right {
+        position: absolute;
+        //z-index: -5;
+        top:600px;
+        right:0px;
+        max-width: 200px;
+        max-height: 200px;
+        width: 40%;
+        border-radius: 50%;
+        box-shadow: 20px -20px #DEFDF1;
+        @include pc {
+        top:0;
+        right:0;
+        max-width: 500px;
+        max-height: 500px;
+            width: 35%;
+        box-shadow: 100px -100px #DEFDF1;
+        }
+    }
+}
+/*-------------------------------
+
+ あいさつ（greeting）
+
+--------------------------------*/
+.greeting { 
+    position: relative;
+    margin: 0 auto;
+    //max-width: 335px;
+	margin-top: 235px;
+    @include pc {
+        //max-width: 1000px;
+        margin-top: 80px;
+    }
+    &__holder {
+        @include pc {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    }
+    &__bg_greeting {
+        display: none;
+        @include pc {
+            display: block;
+            position: absolute;
+        right: 0;
+        top: -90%;
+            }
+    }
+    &__flex {
+        @include pc {
+            display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: space-around;
+            max-width: 1000px;
+        }
+    }
+    &__img {
+		max-width: 568px;
+        width: 100%;
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+		
+		@include pc {
+			max-width: 340px;
+			width: 40%;
+		} 
+    }
+    &__box {
+		max-width: 568px;
+        width: 90%;
+        margin: 0 auto;
+		@include pc {
+			max-width: 375px;
+		}
+    }
+    &__title {
+        text-align: center;
+		margin: 45px 0 35px 0;
+		font-weight: normal;
+		font-size: 36px;
+		@include pc {
+			margin: 0 auto;
+        	margin-bottom: 55px;
+        	letter-spacing: 0.3rem;
+        	writing-mode: vertical-rl;
+        	font-size: 28px;
+		}
+    }
+    &__span {
+        color: #FD8C90;
+    }
+    &__subtitle {
+        font-size: 22px;
+        font-weight: normal;
+        margin-bottom: 20px;
+    }
+    &__ruby {
+        font-size: 12px;
+    }
+    &__text {
+			font-family: $noto_font;
+        font-size: 14px;
+    }
+}
+/*-------------------------------
+
+ 背景の波
+
+--------------------------------*/
+.main4 {
+    display: none;
+    @include pc {
+    &__test1 {
+        height: 1500px;
+        top:-500px
+    }
+    &__test2 {
+        top:-100px;
+    }
+    }
+}
+/*-------------------------------
+
+ 講座案内（+部品接続）
+
+--------------------------------*/
+.over{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+/*-------------------------------
+
+ スライドショーの設定
+
+--------------------------------*/
+.slider2 {
+	margin-top: 125px;
+    display: none;
+	
+	@include pc {
+        display: block;
+		margin-top: 400px;
+    	//margin-bottom: 120px;
+    	width: 100%;
+	}
+}
+.slider2 .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    //background: #fff;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider2 .swiper-slide img {
+    //max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+}
+.slider3 {
+	margin-top: 125px;
+    	//margin-bottom: 120px;
+    	width: 100%;
+	
+	@include pc {
+        display: none;
+	}
+}
+.slider3 .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    //background: #fff;
+
+    /* Center slide text vertically */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider3 .swiper-slide img {
+    max-width: 500px;
+    //max-height: 500px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+}
+.lesson{
+    position: relative;
+    padding-top: 120px;
+    padding-bottom: 150px;
+    background-color: #FFEEEA;
+    background-image: url("../images/all_bg_drop_pink.png");
+    background-position: top -30px right 20px;
+    width: 100%;
+    overflow: hidden;
+	&__title{
+        text-align: center;
+        font-size: 40px;
+     }
+	&__span{
+        color: #fd8c90;
+ }
+     &__bg_lesson {
+        display: none;
+        @include pc {
+            display: block;
+            max-width: 80%;
+        z-index: 1000;
+        position: absolute;
+        top: -500px;
+        left: 3%;
+        }
+    }
+/*-------------------------------
+
+ 自分磨き&サロン開業講習
+
+--------------------------------*/ 
+	/*&__box{
+        position: relative;
+        height: 500px;
+ }*/
+	&__box1,&__box2,&__box3{
+		font-family: $noto_font;
+	}
+	    &__box1{
+            position: relative;
+            max-width: 568px;
+		    height: 10%;
+            margin: 0 auto;
+            
+		@include pc {
+			max-width: 800px;
+			margin: 0 auto;
+        }
+    }
+	/*&__content{
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    left: 20%;
+    right: 20%;
+    margin: auto;
+    margin-top: 110px;
+		
+		h3{
+			font-size: 20px;
+   		margin: 40px 0 40px 93px;
+   		color: #fd8c90;
+		}
+ }*/
+    &__content{
+        margin: 0 1rem;
+        margin-top: 75px;
+		position: absolute;
+		position: relative;
+    	z-index: 2;
+        @include pc {
+            display: flex;
+            left: 10%;
+            margin: auto;
+            margin-top: 110px;
+		h3{
+			font-size: 20px;
+   		margin: 40px 0 40px 93px;
+   		color: #fd8c90;
+            }
+        }
+    }
+        &__bar {
+        display: none;
+        @include pc {
+            display: block;
+        }
+    }
+	/*&__img1{
+    object-fit: contain;
+    width: 197px;
+    height: auto;
+ }*/
+    &__img1{
+    object-fit: contain;
+    max-width: 170px;
+    height: auto;
+        display: block;
+        margin: 0 auto;
+		
+		@include pc {
+			max-width: 240px;
+            margin: 0;
+            margin-right: 50px;
+		}
+	}
+    	&__holder {
+            margin-top: 45px;
+		@include pc {
+            //max-width: 800px;
+			//margin: 0;
+		}
+    }
+	&__subtitle{
+    display: flex;
+    margin-top: 37px;
+        display: inline;
+		text-align: center;
+        @include pc {
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            
+            position: absolute;
+            top: 0;
+            left: 20%;
+        }
+		/*p{
+			margin-left: 14px;
+			font-size: 16px;
+		}*/
+ }
+    &__course {
+        font-size: 20px;
+        color: #FD8C90;
+        margin: 20px 0;
+        text-align: center;
+        
+        @include pc {
+            text-align: left;
+        }
+    }
+	&__round{
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #583C27;
+    border-radius: 50%;
+    margin-left: 80px;
+ }
+	&__boder{
+    display: inline-block;
+    width: 33px;
+    height: 1px;
+    background-color: #583C27;
+    margin-bottom: 2.8px;
+    margin-left: -6px;
+ }
+	&__text{
+    max-width: 568px;
+    //margin-left: 93px;
+        @include pc {
+            max-width: 400px;
+        }
+ }
+	&__svg1{
+        position: absolute;
+        z-index: 1;
+        margin-left: -30px;
+        width: 80%;
+        //top: 30%;
+        animation: lesson__svg1-anim 20s infinite;
+        
+        @include pc {
+            left: -8%;
+        }
+    }
+	@keyframes lesson__svg1-anim {
+    0% {
+        transform: scale(1) skewY(0);
+    }
+    50% {
+        transform: scale(1.05) skewY(1deg);
+    }
+    100% {
+        transform: scale(1) skewY(0);
+    }
+}
+/*-------------------------------
+
+ 癒しのセラピスト
+
+--------------------------------*/ 
+	&__box2{
+        //height: 500px;
+        //position: relative;
+        //top: 200px;
+        position: relative;
+        max-width: 568px;
+        height: 500px;
+        margin: 0 auto;
+		@include pc {
+            margin: 0;
+			max-width: 800px;
+			margin-left: auto;
+        }
+ }
+	&__content2{
+        margin: 0 1rem;
+        margin-top: 75px;
+		position: absolute;
+		position: relative;
+    	z-index: 2;
+        @include pc {
+            display: flex;
+            right: 0%;
+            margin: auto;
+            margin-top: 110px;
+		    //max-width: 600px;
+		h3{
+			font-size: 20px;
+   		margin: 40px 0 40px 93px;
+   		color: #fd8c90;
+            }
+        }
+ }
+	&__img2{
+    /*object-fit: contain;
+    width: 234px;
+    height: auto;*/
+        order: 2;
+        object-fit: contain;
+        max-width: 170px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+		@include pc {
+			max-width: 240px;
+            margin: 0;
+            padding-left: 50px;
+		}
+	}
+    &__holder2 {
+        order: 1;
+            margin-top: 45px;
+		@include pc {
+            //max-width: 800px;
+			//margin: 0;
+		}
+    }
+	&__subtitle2{
+        //display: flex;
+        flex-direction: row-reverse;
+        margin-top: 37px;
+		display: inline;
+		text-align: center;
+        
+        @include pc {
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            position: absolute;
+            top: 0;
+            right: 35%;
+        }
+		/*p{
+			margin-right: 14px;
+      font-size: 16px;
+		}*/
+ }
+	&__round2{
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #583C27;
+    border-radius: 50%;
+    margin: 0;
+ }
+	&__boder2{
+    display: inline-block;
+    width: 33px;
+    height: 1px;
+    background-color: #583C27;
+    margin-bottom: 2.8px;
+    margin-right : -6px;
+ }
+    &__course2 {
+        font-size: 20px;
+        color: #FD8C90;
+        margin: 20px 0;
+        text-align: center;
+        
+        @include pc {
+            text-align: right;
+        }
+    }
+	&__text2{
+        @include pc{
+                //width: 442px;
+        max-width: 400px;
+    //margin-right: 66px;
+        }
+ }
+	&__svg2{
+        position: absolute;
+        z-index: 2;
+        width: 80%;
+        top: 35%;
+        right: 0%;
+        animation: lesson__svg2-anim 20s infinite;
+        @include pc {
+            //right: -13%;
+        }
+}
+@keyframes lesson__svg2-anim {
+    0% {
+        transform: scale(-1, 1) skewY(0);
+    }
+    50% {
+        transform: scale(-1, 1.05) skewY(1deg);
+    }
+    100% {
+        transform: scale(-1, 1) skewY(0);
+    }
+ }
+	/*　サロン開業講習の個別　*/
+	&__box3{
+        //height: 500px;
+        //position: relative;
+        //top: 960px;
+        
+            position: relative;
+            max-width: 568px;
+		    height: 10%;
+            margin: 0 auto;
+		@include pc {
+			max-width: 800px;
+			margin: 0 auto;
+        }
+    }
+	&__img3{
+    object-fit: contain;
+    max-width: 170px;
+    height: auto;
+        display: block;
+        margin: 0 auto;
+		@include pc {
+			max-width: 240px;
+            margin: 0;
+            margin-right: 50px;
+		}
+	}
+    	&__holder {
+            margin-top: 45px;
+		@include pc {
+            //max-width: 800px;
+			//margin: 0;
+		}
+    }
+    &__content3{
+        margin-top: 75px;
+		position: absolute;
+		position: relative;
+    	z-index: 2;
+        
+        @include pc {
+            display: flex;
+            left: 20%;
+            right: 20%;
+            margin: auto;
+            margin-top: 110px;
+		    maw
+		h3{
+			font-size: 20px;
+   		margin: 40px 0 40px 93px;
+   		color: #fd8c90;
+            }
+        }
+    }
+    &__svg3{
+        position: absolute;
+        z-index: 1;
+        margin-left: -30px;
+        width: 80%;
+        top: 65%;
+        animation: lesson__svg1-anim 20s infinite;
+        @include pc {
+            width: 75%;
+            left: -8%;
+            top: 70%;
+        }
+    }
+}
+/*-------------------------------
+
+生徒の声
+
+--------------------------------*/ 
+.student-voice {
+    //padding-top: 120px;
+    background-color: #FFEEEA;
+    background-image: url("../images/wave_middle2.png"),url("../images/circle_green.svg");
+    background-position:  left -700px bottom -200px , right 10% top 20%;
+    position: relative;
+	@include pc {
+		background-image: url("../images/all_bg_drop_white.png"),url("../images/wave_middle2.png"),url("../images/circle_green.svg");
+        background-position: left 5% top 5% , right 20% bottom 0px  , right 40% top 10%;
+	}
+    &__bg_voice {
+		display: none;
+		@include pc {
+            display: block;
+        position: absolute;
+        right: 5%;
+        top: 0%;
+			}
+    }
+    &__title{
+        text-align: center;
+        font-size: 40px;
+     }
+    &__box {
+        max-width: 400px;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+        margin-top: 30px;
+    }
+    &__img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: contain;
+        background-color: #fff;
+    }
+	&__span{
+        color: #fd8c90;
+    }
+    &__course {
+        text-align: center;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+    &__course--discription {
+			font-family: $noto_font;
+        display: block;
+        margin: 0 auto;
+        max-width: 325px;
+        @include pc {
+            max-width: 370px;
+        }
+    }
+    &__name {
+			font-family: $noto_font;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    &__text {
+			font-family: $noto_font;
+        text-align: initial;
+        &:last-of-type {
+            display: block;
+            text-align: right;
+        }
+    }
+    &__link {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #583c27;
+    }
+}
+.qa {
+    display: block;
+    max-width: 335px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #FD8C90;
+    margin-top: 120px;
+    padding: 25px 0;
+	&:hover {
+			background-color: #A1E3EE;
+		}
+    @include pc {
+        max-width: 768px;
+        padding: 50px 200px;
+        margin-top: 160px;
+    }
+    &__link {
+        text-decoration: none;
+        font-size: 24px;
+        color: #000;
+        @include pc {
+            font-size: 32px;
+        }
+    }
+}

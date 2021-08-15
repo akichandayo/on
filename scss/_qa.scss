@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+$pc: 769px;
+@mixin pc {  
+    @media (min-width:($pc)) {
+        @content; 
+    }
+}
+
+$yumi_font:'Shippori Mincho', serif;
+
+/*---------------------------------------------------------
+
+Q&Aページcss
+
+--------------------------------*/
+
+.titlecolor{
+	color: #FD8C90;
+}
+
+.qapage{
+	text-align: center;
+	margin-top: 344px;
+	@include pc{
+	width: 768px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: left;
+			margin-top: 400px;
+
+	}
+	
+	&__bigbox{
+		display: inline-block;
+		text-align: left;
+		margin-left: 10%;
+		margin-right: 10%;
+		@include pc{
+			display: inline;
+		}
+		
+	}
+	
+	&__titlebox{
+		text-align: center;
+	}
+
+	&__title{
+		font-size: 32px;
+		font-family: $yumi_font;
+		font-weight: 600;
+		margin-bottom: 80px;
+		@include pc{
+			margin-bottom: 0;
+		font-size: 40px;
+		}
+		
+	}
+	
+	&__down{
+		display: none;
+		@include pc{
+		display: inline-block;
+		margin-top: 30px;
+		margin-bottom: 103px;
+		width: 30px;
+  height: 30px;
+  border: 3px solid;
+  border-color:  transparent transparent #583C27 #583C27;
+			opacity: 0.4;
+  transform: rotate(-45deg);
+		}
+	}
+	
+	&__box{
+			margin-bottom: 84px;
+		@include pc{
+		margin-bottom: 107px;
+		}
+	}
+	
+	&__q,
+	&__a{
+		display: flex;
+		align-items: center;
+	}
+	
+	&__q{
+		margin-bottom: 23px;
+		@include pc{
+		margin-bottom: 50px;
+		}
+		
+		img{
+			width: 71px;
+			height: auto;
+			margin-left: 5px;
+			@include pc{
+			margin-left: 30px;
+			}
+		}
+	}
+	
+	&__qtext{
+		font-size: 22px;
+		margin-left: 24px;
+		font-family: $yumi_font;
+		font-weight: 600;
+		@include pc{
+		font-size: 24px;
+		}
+	}
+	
+	&__a{
+		background-color: #fff;
+		border-radius: 20px;
+		padding: 32px 26px 38px 17px;
+		
+		img{
+			width: 71px;
+			height: auto;
+			//margin: 32px 0 38px 16px;
+			@include pc{
+			margin: 30px 25px 30px 30px;
+			}
+		}
+	}
+	
+	&__atext{
+		//margin-right: 180px;
+		font-size: 1rem;
+		line-height: 21px;
+	}
+}
+
+.footerbox{
+	margin-top: 131px;
+}

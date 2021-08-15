@@ -1,0 +1,717 @@
+@charset "utf-8";
+
+$pc: 769px;
+@mixin pc {  
+    @media (min-width:($pc)) {
+        @content; 
+    }
+}
+
+$yumi_font:'Shippori Mincho', serif;
+
+body {
+    background-color: #FFEEEA;
+        //font-size: 1rem;
+}
+
+/*-------------------------------
+
+Voiceページ
+
+--------------------------------*/ 
+
+.voice__wapper {
+	max-width: 568px;
+	margin: 0 auto;
+    
+    @include pc {
+        max-width: 1000px;
+    }
+}
+
+/*.voice__bg1 {
+    display: none;
+    
+	@include pc {
+        width: 100vw;
+        max-height: 700px;
+        height: 100%;
+		margin-top: 260px;
+        display: block;
+        background-image: url("../images/concept_right.jpg");
+	    background-repeat: no-repeat;
+	    background-position: center center;
+	    background-size: cover;
+        background-attachment: fixed;
+		
+	}
+}*/
+.voice{
+	&__wave1{
+				display: none;
+		@include pc{
+		  position: absolute;
+      z-index: -1;
+			display: inline;
+			width: 100%;
+		  max-width: 100%;
+		  height: auto;
+      top: 45rem;
+			right: 0;
+			left: 0;
+		}
+	}
+	&__drop1{
+				display: none;
+		@include pc{
+			display: inline;
+		  position: absolute;
+      z-index: -2;
+      top: 75rem;
+			left: 116px;
+		}
+	}
+	&__wave2{
+				display: none;
+		@include pc{
+		  position: absolute;
+      z-index: -1;
+			display: inline;
+			width: 100%;
+		  max-width: 100%;
+		  height: auto;
+			margin-top: -7rem;
+			right: 0;
+			left: 0;
+		}
+	}
+	&__drop2{
+				display: none;
+		@include pc{
+			display: inline;
+		  position: absolute;
+      z-index: -2;
+			margin-top: 20%;
+			right: 116px;
+		}
+	}
+	&__drop3{
+				display: none;
+		@include pc{
+			display: inline;
+		  position: absolute;
+      z-index: -2;
+			margin-top: 40%;
+			left: 15%;
+		}
+	}
+	&__wave3{
+		position: absolute;
+    z-index: -3;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		object-fit: contain;
+		right: 0;
+		left: 0;
+		margin-top: 90%;
+		@include pc{
+			margin-top: 0;
+		}
+	}
+}
+
+.voice__bg2 {
+    margin-top: 150px;
+    &--img {
+        object-fit: cover;
+        width: 100vw;
+        //height: 100vh;
+        max-height: 100vh;
+
+    }
+}
+
+//生徒の声-共通
+.student_voice {
+    max-width: 568px;
+    margin: 0 auto;
+	margin-top: 400px;//適当なので後で修正
+	
+	@include pc {
+        max-width: 1000px;
+	    margin-top: 450px;//変更あるかも
+	    font-size: 1rem;
+	    color: #583C27;
+	}
+		.down{
+			display: none;
+		@include pc{
+		display: inline-block;
+		margin: 30px auto 103px;
+		width: 30px;
+  height: 30px;
+  border: 3px solid;
+  border-color:  transparent transparent #583C27 #583C27;
+			opacity: 0.4;
+  transform: rotate(-45deg);
+		}
+		}
+	
+	&__titlebox{
+		text-align: center;
+	}
+
+	//見出し（生徒の声）
+	&__title {
+		font-family: $yumi_font;
+		font-size: 32px;
+		text-align: center;
+		
+		@include pc {
+			font-size: 40px;
+			}
+
+		& span {
+			color: #FD8C90;
+			}
+	}
+	&__icon {
+		display: none;
+			@include pc {
+		display: inline-block;
+		margin-top: 32px;
+		margin-bottom: 52px;
+		&--wrap {
+			text-align: center;
+		}
+		}
+	}
+	
+	//コンテンツ（生徒の声）
+	&__box {
+		background-color: #fff;
+		margin-top: 60px;
+		//min-width: 728px;
+		//min-width: 335px;
+		padding: 30px;
+		//margin: 20px;
+		
+		@include pc {
+			max-width: 768px;
+			padding: 46px 46px 46px 56px;
+            margin: 0 auto;
+			//margin: 0 auto 208px auto;
+		}
+	}/*__box*/
+	
+	&__heading {
+		display: none;
+        
+        @include pc {
+            display: block;
+        }
+		&--less {
+			font-family: $yumi_font;
+			font-weight: bold;
+			font-size: 18px;
+		}
+		
+		@include pc {
+			display: block;
+			font-size: 18px;
+			font-family: $yumi_font;
+			font-weight: bold;
+		&:nth-child(1) {
+			text-align: left;
+		}
+		&:nth-child(2) {
+			text-align: right;
+		}
+		&--less {
+			display: none;
+			}
+		}
+	}/*__heading*/
+	
+	&__flex {
+		display: block;
+		margin-top: 30px;
+		text-align: center;
+		&--left {
+				background-color: #FFEEEA;
+				width: 250px;
+				height: 250px;
+				border-radius: 100%;
+				text-align: center;
+				margin: 0 auto;
+            
+		}
+		&--right {
+			display:inline-block;
+			text-align: left;
+            @include pc {
+                max-width: 350px;
+            }
+		} 
+		
+		@include pc {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			//margin-top: 33px;
+			
+			}
+	}/*__flex*/
+	
+	&__text {
+		text-align: center;
+					font-size: 18px;
+				font-family: $yumi_font;
+				color: #FD8C90;
+				font-weight: bold;
+				//padding-top: 13px;
+			@include pc {
+				text-align: left;
+		}
+		
+		&--name {
+			text-align: center;
+				font-size: 24px;
+				font-family: $yumi_font;
+				font-weight: bold;
+				//padding-top: 7px;
+
+			@include pc {
+				text-align: left;
+			}
+		}
+        
+        &--line_spacing {
+            margin: 15px 0;
+        }
+	}/*__text*/
+    
+    &__span {
+        font-size: 16px;
+			}
+	
+	&__qa {
+		font-size: 1rem;
+        font-weight: bold;
+		margin-top: 20px;
+        
+		&--a {
+			padding-top: 10px;
+            @include pc {
+                padding: 0;
+            }
+        }
+            
+        &--span {
+            color: #A1E3EE;
+        }
+	}/*__qa*/
+	
+	&__img {
+		width: auto;
+		height: 250px;
+		margin: 0 auto;
+	}
+}/*.student_voice*/
+
+
+//卒業生の声-共通
+.graduate_voice {
+		//font-size: 14px;
+		color: #583C27;
+    margin-top: 230px;
+	
+	//見出し（卒業生の声）
+	&__title {
+		
+		//margin-bottom: 34px;
+		font-family: $yumi_font;
+		font-size: 32px;
+		text-align: center;
+		
+		@include pc {
+			font-size: 40px;
+		}
+
+		& span {
+		color: #FD8C90;
+		}
+	}
+	
+	//コンテンツ（卒業生の声）
+	&__flex {
+			//padding: 0 20px;
+			max-width: 768px;
+			display: flex;
+			flex-direction: column-reverse;
+		
+			@include pc {
+				flex-direction: row;
+				max-width: 768px;
+				justify-content: space-between;
+				align-items: flex-start;
+                margin: 0 auto;
+				}
+
+			&--left {
+				max-width: 380px;
+				margin: 0 auto;
+                margin-top: 40px;
+				@include pc {
+					max-width: 100%;
+					margin: 0 auto;
+				}
+			}
+		
+			&--right {
+				//width: 335px;
+				margin: 0 auto;
+				@include pc {
+					max-width: 250px;
+					padding-left: 60px;
+				}
+			}
+
+			&--bg {
+                margin-top: 60px;
+				position: relative;
+				z-index: 1;
+                
+                @include pc {
+                    margin-top: 0px;
+                    margin-bottom: 200px;
+                }
+			}
+
+			&--case1 {
+				margin-top: 0;
+				@include pc {
+					margin-top: 98px;
+			}
+		}
+
+	}/*__flex*/
+    
+    &__flexbox {
+        
+        margin-top: 20px;
+        
+        @include pc {
+            
+        
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+            }
+    }
+	
+	&__bg {
+        display: none;
+			@include pc {
+				display: block;
+				position: absolute;
+				z-index: -5;
+				left: -45%;
+				}
+	}
+	
+	&__heading {
+		margin-top: 10px;
+		display: inline-block;
+		font-family: $yumi_font;
+		font-size: 24px;
+		@include pc {
+			margin-top: 0;
+			}
+	}/*__heading*/
+	
+	&__text {
+		margin: 40px 0;
+        @include pc {
+            margin: 40px 0 50px 0;
+        }
+			&--wrap {
+				max-width: 380px;
+				//display:flex;
+				margin-top: 40px;
+				@include pc {
+					display: block;
+                    width: 250px;
+					//margin-top: 0;
+				}
+			}
+
+		    &--small {
+			//margin-right: 18px;
+			display: block;
+			background-color: #fff;
+			text-align: center;
+			//line-height: 84px;
+			//height: 84px;
+			//width: 84px;
+			
+			@include pc {
+				line-height: 30px;
+				height: 30px;
+				margin: 21px 0 10px 0;
+				width: 215px;
+			}
+		}
+        
+        &--line_spacing {
+            margin-top: 15px;
+        }
+        
+        &--list {
+            margin-top: 10px;
+            width: 250px;
+        }
+	}/*__text*/
+	
+	&__qa {
+		font-size: 16px;
+		//margin-top: 10px;
+        font-weight: bold;
+		@include pc {
+            //margin-top: 20px;
+			//padding-top: 32px;
+		}
+		& span {
+				color: #A1E3EE;
+			}
+		&--a {
+			//padding-top: 10px;
+            margin-bottom: 20px;
+		}
+	}/*__qa*/
+	
+	&__img {
+		height: 215px;
+		width: auto;
+		margin: 0 auto;
+		
+		&--wrap {
+			margin: 0 auto;
+			text-align: center;
+			width: 215px;
+			height: 215px;
+			border-radius: 100%;
+			background-color: #fff;
+		}
+	}/*__img*/
+	
+}/*.graduate_voice*/
+
+//講師紹介-共通
+.voice-instructor {
+	font-size: 1rem;
+	color: #583C27;
+    margin: 0 auto;
+    max-width: 568px;
+    margin-top: 150px;
+    @include pc {
+        max-width: 1000px;
+    }
+	
+	//見出し（講師紹介）
+	&__title {
+		font-family: $yumi_font;
+		font-size: 40px;
+		text-align: center;
+		//margin-top: 120px;
+		margin-bottom: 60px;
+        display: block;
+        margin: 0 auto;
+
+		& span {
+		color: #FD8C90;
+		}
+	}
+	
+	//院長の紹介
+	&__director {
+		//padding: 20px;
+		&__flex {
+			margin-top: 60px;
+            @include pc {
+                display: -webkit-flex;
+                display: -moz-flex;
+                display: -ms-flex;
+                display: -o-flex;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 60px;
+            }
+			&--left {
+				text-align: center;
+			
+			@include pc {
+				//display: flex;		
+				//align-items: center;
+                text-align: left;
+                }
+            }
+				&--right {
+					//max-width: 280px;
+					//margin-right: 65px;
+                    @include pc {
+                        max-width: 655px;
+                    }
+			}
+		}
+		&__img {
+			&--bottom {
+				display: none;
+				@include pc {
+					display: block;
+					margin-top: 29px;
+					margin-bottom: 10px;
+				}
+			}
+		}/*__img*/
+		
+		&__text {
+            
+
+			&--name {
+				margin: 40px 0 20px 0;
+				font-family: $yumi_font;
+				font-size: 22px;
+				font-weight: bold;
+				//margin-bottom: 30px;
+				& span {
+					font-size: 12px;
+					padding-left: 10px;
+					}
+				@include pc {
+					margin-bottom: 46px;
+					}
+				}
+			&--small {
+				display: none;
+				@include pc {
+					display: block;
+				}
+			}
+		}/*__text*/
+	}/*__director*/
+	
+	//先生の紹介
+	&__teacher {
+		margin-top: 200px; //auto 0 auto;
+        width: 100%;
+		@include pc {
+			margin: 290px auto 0 auto;
+		}
+		
+		&__box {
+			text-align: center;
+			margin-bottom: 90px;
+            width: 100%;
+				&--last {
+					margin-bottom: 23px;
+					}
+				@include pc {
+				position: relative;
+				margin-bottom: 117px;
+				&--even {
+					text-align: right;
+				}
+			}
+		}/*__box*/
+		
+		&__bg {
+			display: block;
+			text-align: center;
+			max-width: 768px;
+			height: 160px;
+            
+			background-color: #fff;
+			line-height: 160px;
+			
+			@include pc {
+				max-width: 700px;
+                width: 100%;
+				height: 260px;
+				line-height: 260px;
+			&--odd {
+				text-align: right;
+				margin-right: auto;
+			}
+			&--even {
+				text-align: left;
+				margin-left: auto;
+			}
+			}
+		}/*__bg*/
+		
+		&__img {
+			display:block;
+			width: auto;
+				&--odd {
+					height: 350px;
+					margin: 0 auto;
+					}
+				&--even {
+					height: 380px;
+					margin: 0 auto;
+				}
+				&--last {
+					margin-top: 113px;
+                    //padding-bottom: 170px;
+					width: 100%;
+				}
+			@include pc {
+				display: block;
+				position: absolute;
+				bottom: 0;
+				max-width: 800px;
+				&--wrap {
+					text-align: center;
+                    
+				}
+				&--odd {
+					left: 15%;
+				}
+				&--even {
+					right: 12%;
+				}
+				&--last {
+					margin-top: 121px;
+                    
+				}
+			}
+		}/*__img*/
+	
+		&__text {
+				&--name {
+					display: inline-block;
+					font-family: $yumi_font;
+					font-size: 22px;
+					font-weight: bold;
+					& span {
+						color: #A1E3EE;
+						margin-right: 10px;
+					}
+					
+					@include pc {
+					&--odd {
+						margin-right: 70px;
+					}
+					&--even {
+						margin-left: 70px;
+					}
+				}
+			}
+			}/*__text*/
+		
+		}/*__teacher*/
+}/*.instructor*/

@@ -1,0 +1,964 @@
+@charset "utf-8";
+
+$pc: 769px;
+@mixin pc {  
+    @media (min-width:($pc)) {
+        @content; 
+    }
+}
+$yumi_font: 'Shippori Mincho', serif;
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    //background: #eee;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    @include pc {
+        font-size: 1rem;
+    }
+}
+//img{
+//    width: 100%;
+//    height: auto;
+//}
+/*-------------------------------
+
+ ハンバーガーアイコン（開・閉）を設定
+
+--------------------------------*/
+.hambarger--close {
+	z-index: 999;
+    width: 50px;
+    height: 60px;
+    //border: 3px solid #000;
+    position: absolute;
+	position: fixed;
+    top: 2%;
+    right: 4%;
+    //border-radius: 10px;
+	//background-color: #fff;
+	@include pc {
+		display: none;
+	}
+	&:hover {
+		cursor: pointer;
+        //background-color: #DCF1D0;
+	}
+    & span {
+        position: absolute;
+        top: 50%;
+        left: 8px;
+        width: 30px;
+        //height: 0;
+        border: 1px solid #583c27;
+        background-color: #583c27;
+        border-radius: 3px;
+		transition-duration: 1s;
+		transform: rotateZ(0deg);
+        &:nth-of-type(1){
+            top: 25%;
+			transition-duration: 1s;
+			transform: rotate(0deg);
+        }
+        &:nth-of-type(3){
+            top: 75%;
+			transition-duration: 1s;
+			transform: rotate(0deg);
+        }
+    }
+}
+.hambarger--open {
+	z-index: 999;
+    width: 50px;
+    height: 60px;
+    //border: 2px solid #000;
+    position: absolute;
+	position: fixed;
+    top: 2%;
+    right: 4%;
+    border-radius: 10px;
+        &:hover {
+            cursor: pointer;
+            //background-color: #F2D0EE;
+        }
+    & span {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    width: 30px;
+    height: 0;
+    border: 1px solid #583c27;
+    background-color: #583c27;
+    border-radius: 3px;
+	transition-duration: 1s;
+	transform: rotateY(405deg);
+    opacity: 0;
+    &:nth-of-type(1){
+        top: 50%;
+		transition-duration: 1s;
+        transform: rotate(-405deg);
+		opacity: 1;
+    }
+    &:nth-of-type(3){
+        top: 50%;
+		transition-duration: 1s;
+        transform: rotate(405deg);
+		opacity: 1;
+        }
+    }
+}
+.hambarger--gnavi--close {
+	display: none;
+}
+.hambarger--gnavi--open {
+	z-index: 888;
+	position: fixed;
+	width: 100vw;
+	height: 100%;
+    background-color: #ffeeea;
+	&__title {
+        margin: 10px 0 0 20px;
+        text-align: left;
+	}
+	&__img {
+		width: 70%;
+		height: auto;
+		margin-top: 5px;
+		padding-top: 0;
+	} 
+    &__list {
+        margin-top: 10%;
+    }
+	&__item{
+		list-style: none;
+        text-align: right;
+        //margin-top: 7%;
+        margin: 5% 30px;
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+	&__link{
+		font-size: 24px;
+        font-family: $yumi_font;
+        font-weight: 800;
+        color: #583c27;
+		//margin-bottom: 50px;
+		display: inline-block;
+		text-decoration: none;
+	
+		&:hover{
+			background-color:  #F2D0EE;
+		}
+	}
+}
+/*-------------------------------
+
+ 画面左側に現れるSNSアイコン
+
+--------------------------------*/
+.fixed--left {
+    display: none;
+    @include pc {
+        display: block;
+        z-index: 777;
+        position: absolute;
+        position: fixed;
+        top: 50%;
+        left: 35px;
+        margin: auto;
+        color: #583C27;
+    }
+    &__list {
+        list-style-type: none;
+    }
+    &__item {
+        margin-bottom: 30px;
+    }
+   
+    &__fab {
+        font-size: 2rem;
+    }
+    
+    &__link {
+        color: #583C27;
+    }
+}
+/*-------------------------------
+
+ 画面左下に現れる「topへ戻る」ボタン
+
+--------------------------------*/
+.fixed--left--bottom--close {
+    display: none;
+}
+.fixed--left--bottom--open {
+    display: none;
+    @include pc{
+        display: block;
+    z-index: 555;
+    position: absolute;
+    position: relative;
+    position: fixed;
+    bottom: 10%;
+    left: 3%;
+    }
+    &__arrow {
+    width: 10px;
+    height: 50px;
+    //background-color: #000;
+    border-top: 2px solid #583C27;
+    border-left: 2px solid #583C27;
+    transform: skewY(45deg);
+    }
+    &__text {
+        position: absolute;
+        top:20px;
+        color: #583C27;
+        transform: rotateZ(90deg);
+    }
+}
+/*-------------------------------
+
+ 画面右下に現れる受講申し込み
+
+--------------------------------*/
+.fixed--right--close {
+    display: none;
+}
+.fixed--right--open {
+    display: none;
+    @include pc {
+    display: block;
+    z-index: 666;
+    position: absolute;
+    position: fixed;
+    bottom: 15%;
+    right: 3%;
+    margin: auto;
+    //background-image: url("../images/move_obj.png");
+    //background-repeat: no-repeat;
+    //background-size: 100% 80%;
+    }
+    &__list {
+        list-style-type: none;
+        padding-right: 10px;
+        padding-bottom: 10px;
+    }
+    &__link {
+        text-decoration: none;
+    }
+}
+/*-------------------------------
+
+ 一定数スクロールしたら出てくる固定ヘッダー
+
+--------------------------------*/
+.fixed--top--close {
+    display: none;
+}
+.fixed--top--open {
+    display: none;
+    @include pc {
+    z-index: 555;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    //height: 130px;
+		height: 80px;
+    //padding-top: 20px;
+    background-color: rgba(255,255,255,0.50);
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    }
+    &__img {
+        width: 225px;
+    }
+    &__list {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+    } 
+    &__item {
+        list-style-type: none;
+        
+        &:last-of-type {
+            background-color: #FD8C90;
+
+            &:hover {
+                background-color: #A1E3EE;
+            }
+        }
+    }  
+    &__link {
+        text-decoration: none;
+        padding: 20px 40px;
+        display: block;
+		font-family: $yumi_font;
+		color: #583C27;
+		//font-size: 14px;
+        font-size: 1rem;
+        white-space: nowrap
+    }
+    &__white {
+		color: #fff;
+		font-size: 16px;
+	}
+	&__contact{
+		color: #fff;
+		font-size: 16px;
+	}
+}
+/*-------------------------------
+
+    spお申込みボタン
+
+--------------------------------*/
+.fixed--bottom--close {
+     display: none;   
+}
+.fixed--bottom--open { 
+    display: block;
+    &__link {
+        //position: absolute;
+        position: fixed;
+        bottom: 5%;
+        left: 0;
+        right: 0;
+        width: 90%;
+        line-height: 55px;
+        text-decoration: none;
+        background-color: #A1E3EE;
+        color: #583C27;
+        margin: auto;
+        z-index: 777;
+        text-align: center;
+        vertical-align: middle;
+        @include pc {
+        display: none;
+        }
+    }
+}
+/*-------------------------------
+
+    ロゴから垂らすオイルのしずくの設定
+
+--------------------------------*/
+.load{
+    display: inline-block;
+    //margin-top: 25px;
+    //background-color: #FFEEEA;
+    //display: flex;
+}
+.title{
+    text-align: center;
+    margin-left: 225px;
+    & img {
+        margin-top: 16px;
+    }
+}
+.dropanim {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    padding-left: 30px;
+}
+.dropanim--bottom {
+        position: relative;
+        overflow: hidden;
+        padding-left: 30px;
+        height: 70vh;
+    }
+.drop,
+.wave{
+    margin: 175px auto;
+}
+.drop {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    //top: 65px;
+    //left:-85px;
+	top: 55px;
+    left:-84px;
+    margin: 0px auto;
+    //background: #B8957A;
+	background: #f8f4c1;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    -moz-animation-name: drip;
+    -webkit-animation-name: drip;
+    animation-name: drip;
+    -moz-animation-timing-function: cubic-bezier(1,0,.91,.19);
+    -webkit-animation-timing-function: cubic-bezier(1,0,.91,.19);
+    animation-timing-function: cubic-bezier(1,0,.91,.19);
+    -moz-animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+.drop:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    //border-bottom: 30px solid #B8957A;
+	border-bottom: 30px solid #f8f4c1;
+    top: -22px;
+    left: 0px;
+}
+.icon{
+    margin-left: -20px;
+	margin-top: -10px;
+    padding: 0;
+    height: 80px;
+    background-image: url("../images/logo_new_nonoil.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+/*-------------------------------
+
+ 波紋の設定
+
+--------------------------------*/
+.wave--area {
+    position: relative;
+    display: none;
+    @include pc {
+		display: block;
+        //width: 600px;
+    	//height: 300px;
+    	//margin-left: 70px;
+		height: 50px;
+		margin-top: -20px;
+    }
+}
+.wave {
+    position: relative;
+    //position: absolute;
+    opacity: 0;
+    top: -200px;
+	margin: 20px auto;
+	left: -38%;
+    width: 1px;
+    height: 0.5px;
+    //border: #AA7A41 7px solid;
+	border: #ffc1b3 5px solid;
+    -moz-border-radius: 300px / 150px;
+    -webkit-border-radius: 300px / 150px;
+    border-radius: 300px / 150px;
+    -moz-animation-name: ripple;
+    -webkit-animation-name: ripple;
+    animation-name: ripple;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -moz-animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+.wave:after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    top: -5px;
+    left: -5px;
+    width: 2px;
+    height: 1px;
+    //border: #AA7A41 5px solid;
+	border: #ffc1b3 3px solid;
+    -moz-border-radius: 300px / 150px;
+    -webkit-border-radius: 300px / 150px;
+    border-radius: 300px / 150px;
+    -moz-animation-name: ripple-2;
+    -webkit-animation-name: ripple-2;
+    animation-name: ripple-2;
+    -moz-animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+/*-------------------------------
+
+ しずく・波紋のアニメーション
+
+--------------------------------*/
+@keyframes ripple {
+    from {
+        opacity: 1;
+    }
+    to {
+        //width: 600px;
+        //height: 300px;
+		width: 200px;
+        height: 100px;
+        border-width: 1px;
+        top: -100px;
+        opacity: 0;
+    }
+}
+@keyframes ripple-2 {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        //width: 200px;
+        //height: 100px;
+        //border-width: 1px;
+        //top: 100px;
+        //left: 200px;
+		width: 77px;
+        height: 44px;
+        border-width: 1px;
+        top: 25px;
+        left: 60px;
+    }
+}
+@keyframes drip {
+    to {
+        top: 100vh;
+    }
+}
+/*-------------------------------
+
+            ヘッダー
+
+--------------------------------*/
+.header {
+    //padding-top: 20px;
+    background-color: #FFEEEA;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    &__close {
+        opacity: 0;
+    }
+    &__list {
+        display: none;
+        @include pc {
+            display: block;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__item {
+        list-style-type: none;
+        
+        &:last-of-type {
+            background-color: #FD8C90;
+            &:hover {
+                background-color: #A1E3EE;
+            }
+        }
+    }
+    &__link {
+        text-decoration: none;
+        padding: 20px 40px;
+        display: block;
+
+		font-family: $yumi_font;
+		color: #583C27;
+		//font-size: 14px;
+        font-size: 1rem;
+        white-space: nowrap
+	}
+    &__img {
+        width: 225px;
+    }
+	&__white {
+		color: #fff;
+		font-size: 16px;
+	}
+}
+.wrapper {
+    max-width: 568px;
+    margin-right: auto;
+    margin-left: auto;
+    @include pc {
+        max-width: 1000px;
+    }
+}
+/*-------------------------------
+
+ トップの背景の波を動かす
+
+--------------------------------*/
+.wave_top {
+    position: relative;
+    background-color: #FFEEEA;
+    &__wrapper {
+        margin-right: auto;
+        margin-left: auto;
+        @include pc {
+        max-width: 1000px;
+        }
+    }
+    &__wave1 {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        height: 1000px;
+        z-index: -1000;
+        background-image: url("../images/wave_top1.png");
+        background-size: 120% 90%;
+        background-position: center -20px;
+        animation:wave_top1Loop1 10s linear infinite;
+        @keyframes wave_top1Loop1 {
+            0% {
+                //background-position: -500% 50%;
+                transform: skewY(0deg);
+            }
+            25% {
+                transform: skewY(10deg);
+            }
+            50% {
+                //background-position: 0% 50%;
+                transform: skewY(-10deg);
+            }
+            75% {
+                transform: skewY(10deg);
+            }
+            100% {
+                //background-position: 0% 50%;
+                transform: skewY(0deg);
+            }
+        }
+    }
+    &__wave2 {
+        position: absolute;
+        top:200px;
+        width: 100%;
+        height: 800px;
+        z-index: -2000;
+        background-image: url("../images/wave_top2.png");
+        background-size: 110% 100%;
+        background-position: center center;
+        animation:wave_top2Loop2 10s linear infinite;
+        @keyframes wave_top2Loop2 {
+            0% {
+                //background-position: 50% 50%;
+                transform: translate(0,50px);
+            }
+            25% {
+                transform: translate(0,100px);
+            }
+            50% {
+                //background-position: 70% 50%;
+                transform: translate(0,50px);
+            }
+            75% {
+                transform: translate(0,100px);
+            }
+            100% {
+                //background-position: 50% 50%;
+                transform: translate(0,50px);
+            }
+        }
+    }
+    p {
+        text-align: center;
+    }
+}
+.main2 {
+    height: 1800px;
+}
+/*-------------------------------
+
+ メインコンテンツ４（背景の波を動かす）
+
+--------------------------------*/
+.wave_bottom {
+    position: relative;
+        &__wrapper {
+        margin-right: auto;
+        margin-left: auto;
+        @include pc {
+        max-width: 1000px;
+        }
+    }
+    &__wave1 {
+        position: absolute;
+        top:-900px;
+        width: 100%;
+        height: 1500px;
+        z-index: -1000;
+        background-image: url("../images/wave_bottom1.png");
+        background-size: 110% 100%;
+        background-position: bottom -200px center;
+        animation:main3Loop1 10s linear infinite;
+        @keyframes main3Loop1 {
+            0% {
+                //background-position: 50% 50%;
+                transform: translate(0,100px);
+            }
+            25% {
+                transform: translate(0,200px);
+            }
+            50% {
+                //background-position: 70% 50%;
+                transform: translate(0,100px);
+            }
+            75% {
+                transform: translate(0,200px);
+            }
+            100% {
+                //background-position: 50% 50%;
+                transform: translate(0,100px);
+            }
+        }
+    }
+    &__wave2 {
+        position: absolute;
+        top:-400px;
+        width: 100%;
+        height: 700px;
+        z-index: -1000;
+        background-image: url("../images/wave_middle1.png");
+        background-size: 100% 100%;
+        background-position: center center;
+        animation:main3Loop2 10s linear infinite;
+        @keyframes main3Loop2 {        
+            0% {
+                //background-position: -500% 50%;
+                transform: skewY(0deg);
+            }
+            25% {
+                transform: skewY(5deg);
+            }
+            50% {
+                //background-position: 0% 50%;
+                transform: skewY(-5deg);
+            }
+            75% {
+                transform: skewY(5deg);
+            }
+            100% {
+                //background-position: 0% 50%;
+                transform: skewY(0deg);
+            }
+        }
+    }
+    p {
+        text-align: center;
+    }
+}
+/*-------------------------------
+
+アクセス（map）
+
+--------------------------------*/ 
+.map {
+    //background-color: #FFEEEA;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 115px;
+	//max-width: 335px;
+        @include pc {
+            padding-top: 100px;
+            //max-width: 1000px;
+            margin-top: 55px;
+            background-image: url("../images/bg_access.png");
+            background-position: left 0 top 100px;
+        }
+    &__title {
+        text-align: center;
+        font-size: 40px;
+			font-family: $yumi_font;
+        @include pc {
+            //text-align: center;
+        }
+     }
+	&__title--span {
+        color: #fd8c90;
+    }
+    &__flex {
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: space-between;
+        margin-top: 55px;
+        @include pc {
+            //max-width: 1000px;
+            display: flex;
+        }
+    }
+    &__box {
+        //max-width: 568px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 115px;
+        @include pc {
+            max-width: 350px;
+        }
+    }
+    &__illust {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+    &__link {
+        display: block;
+        line-height: 55px;
+        text-decoration: none;
+        background-color: #FD8C90;
+        color: #583C27;
+        margin: auto;
+        margin-top: 20px;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: bold;
+        &:hover {
+            background-color: #A1E3EE;
+        }
+    }
+    &__subtitle {
+        margin: 40px 0 15px 0;
+    }
+    &__list {
+        list-style-type: none;
+        margin-bottom: 30px;
+    }
+    &__span {
+        font-weight: bold;
+    }
+    &__follow {
+        width: 100%;
+    }
+}
+iframe {
+    //max-width: 335px;
+}
+/*-------------------------------
+
+sns
+
+--------------------------------*/ 
+.sns {
+    background-color: #FFEEEA;
+    padding-top: 30px;
+    background-image: url("../images/all_bg_drop_pink.png");
+    background-position: top 60% right 3%;
+    background-size: 15%;
+    @include pc {
+        background-size: auto;
+        background-position: top right;
+			margin-right: 1rem;
+    }
+    &__box {
+        width: 250px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    &__logo {
+        max-width: 250px;
+        width: 100%;
+    }
+    &__text {
+        text-align: center;
+        font-size: 16px;
+			font-family: $yumi_font;
+    }
+    &__follow {
+        display: block;
+        margin: 0 auto;
+        margin-top: 60px;
+    }
+    &__list {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        margin-top: 20px;
+    }
+    &__fab {
+        font-size: 2rem;
+    }
+    &__link {
+        color: #000;
+        &:hover {
+            opacity: .7;
+        }
+    }
+}
+/*------------
+
+    フッター
+
+--------------*/
+.footer {
+    //position: relative;
+    //background-color: #FFEEEA;
+    text-align: center;
+    padding: 40px 0 0 0;
+    background-image: url("../images/wave_bottom3.png");
+    background-size: 100% 100%;       
+    &__copy {
+        padding-bottom: 150px;
+    }
+}
+.footer--gnavi {
+	//display: none;
+	//@include pc {
+		display: block;
+	//}
+	&__list {
+		display: flex;
+        flex-wrap: wrap;
+		justify-content: center;
+        margin: 80px 0;
+	}
+	&__item {
+		list-style-type: none;
+		font-size: 1rem;
+        padding: 0 10px;
+        //&:nth-of-type(1), &:nth-of-type(4)
+        @include pc {
+            padding: 0;
+        }
+		//border-left: 2px solid #000;
+		&:last-of-type {
+			//border-right: 2px solid #000;
+		}
+	}
+	&__link {
+		text-decoration: none;
+        font-family: $yumi_font;
+        color: #583C27;
+		&:hover {
+			background-color: #F2D0EE;
+		}
+		@include pc {
+			padding: 0 25px;
+			display: inline-block;
+		}
+	}
+}
+
+@import "_top","_contact", "_lesson","_page","_qa","_voice";

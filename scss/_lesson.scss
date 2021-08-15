@@ -1,0 +1,827 @@
+@charset "utf-8";
+
+$pc: 769px;
+@mixin pc {  
+    @media (min-width:($pc)) {
+        @content; 
+    }
+}
+
+
+$yumi_font: 'Shippori Mincho', serif;
+$noto_font: 'Noto Sans JP', sans-serif;
+$font_color: #583C27;
+$main_color: #FD8C90;
+$accent_b: #A1E3EE;
+$accent_y: #F8F4C1;
+.color{
+	color: $main_color;
+}
+.needbox{
+	width: 60px;
+	height: 50px;
+	margin-right: 20px;
+	text-align: center;
+	font-size: 12px;
+	background-color: #fff;
+	border: 1px solid $font_color;
+	padding: 5px 10px;
+}
+.lessonpage{
+	text-align: center;
+	margin-top: 300px;
+	@include pc{
+		margin: 400px 5% 0;
+	}
+	li{
+		list-style-type: none;
+	}
+	&__box{
+		display: inline-block;
+		margin-right: 10%;
+		margin-left: 10%;
+		@include pc{
+			display: inline;
+			width: 1000px;
+		}
+	}
+		&__wave1{
+		display: none;
+		@include pc{
+		  position: absolute;
+      z-index: -5;
+			display: inline;
+			width: 100%;
+		  max-width: 100%;
+		  height: auto;
+      top: 57rem;
+			right: 0;
+			left: 0;
+		}
+	}
+	&__drop1{
+		display: none;
+		@include pc{
+			display: inline;
+		  position: absolute;
+      z-index: -2;
+      top: 85rem;
+			left: 116px;
+		}
+	}
+	&__drop2{
+		display: none;
+		@include pc{
+			display: inline;
+		position: absolute;
+		z-index: -4;
+		top: 165rem;
+		right: 5px;
+		}
+	}
+	&__wave2{
+		display: none;
+		@include pc{
+			position: absolute;
+      z-index: -5;
+			display: inline;
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+			object-fit: contain;
+			top: 219rem;
+			right: 0;
+			left: 0;
+		}
+	}
+	&__drop3{
+		display: none;
+		@include pc{
+		  position: absolute;
+		  z-index: -3;
+			display: inline;
+			margin-top: -10px;
+			right: 15%;
+		}
+	}
+	&__wave3{
+		display: none;
+		@include pc{
+			position: absolute;
+      z-index: -5;
+			display: inline;
+			width: 100%;
+		  max-width: 100%;
+		  height: auto;
+		  top: 415rem;
+			right: 0;
+			left: 0;
+			object-fit: contain;
+		}
+	}
+	&__drop4{
+		display: none;
+		@include pc{
+		  position: absolute;
+		  z-index: -4;
+			display: inline;
+		  top: 450rem;
+		  right: 5px;
+		}
+	}
+    
+	&__drop5{
+		display: none;
+		@include pc{
+		  position: absolute;
+		  z-index: -4;
+			display: inline;
+			top: 545rem;
+			left: 15rem;
+		}
+	}
+	&__wave4{
+		position: absolute;
+    z-index: -5;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		object-fit: contain;
+		bottom: -709rem;
+		right: 0;
+		left: 0;
+		@include pc{
+		top: 570rem;
+		}
+	}
+
+}
+.couseflow,.leschedule,.lprice{
+		margin-top: 120px;
+	@include pc{
+		margin-top: 300px;
+	}
+}
+
+#myself,#healing,#salon{
+	height: 5.5rem;
+	margin-top: 120px;
+	@include pc{
+		margin-top: 300px;
+	}
+}
+/* コース選び */
+.coselect{
+	font-family: $yumi_font;
+	font-size: 20px;
+	&__title{
+		margin-bottom: 30px;
+		@include pc{
+			font-size: 32px;
+		}
+	}
+	&__list{
+		@include pc{
+			display: flex;
+			justify-content: space-around;
+		}
+	}
+	&__link{
+		text-decoration: none;
+		display: block;
+		background-color: #fff;
+		padding: 20px 40px;
+		margin-bottom: 20px;
+		color: $font_color;
+		font-weight: 600;
+		@include pc{
+			margin-bottom: 0;
+			padding: 40px 30px;
+			width: 310px;
+			//margin: 0 25px;
+			font-size: 24px;
+		}
+	}
+}
+/* 流れ */
+.couseflow{
+	margin-top: 200px;
+	@include pc{
+		margin-top: 150px;
+	}
+	&__title{
+		font-family: $yumi_font;
+		font-size: 28px;
+		margin-bottom: 20px;
+		@include pc{
+			font-size: 40px;
+		}
+	}
+	&__bigbox{
+		@include pc{
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+		}
+		span{
+			display: inline-block;
+			margin: 50px 0;
+		  width: 20px;
+      height: 20px;
+      border: 2px solid;
+      border-color:  transparent transparent #583C27 #583C27;
+      transform: rotate(-45deg);
+			@include pc{
+      transform: rotate(-140deg);
+			}
+		}
+	}
+	&__box{
+		&--img{
+			background-color: #fff;
+			border-radius: 50%;
+			padding: 10px;
+			margin-bottom: 10px;
+			max-width: 100%;
+			height: auto;
+			@include pc{
+				margin-bottom: 0;
+				padding: 20px;
+			}
+		}
+		&--text{
+			@include pc{
+				width: 260px;
+				height: 70px;
+				margin-top: 10px;
+				text-align: left;
+			}
+		}
+		&--ctext{
+			@include pc{
+				width: 260px;
+				height: 70px;
+				margin-top: 10px;
+				text-align: center;
+			}
+
+		}
+	}
+}
+/* 自分磨きコース */
+.myself{
+	&__titlebox{
+		font-family: $yumi_font;
+		margin-bottom: 30px;
+		@include pc{
+			display: inline-flex;
+			margin-bottom: 70px;
+		}
+		&--title{
+			font-size: 36px;
+			margin-bottom: 25px;
+			@include pc{
+				font-size: 40px;
+				margin-bottom: 0;
+			}
+		}
+		&--text{
+			color: #fff;
+			font-size: 20px;
+			background-color: $main_color;
+			padding: 20px;
+			font-weight: 600;
+			@include pc{
+				width: 270px;
+				padding: 10px 0;
+				margin-left: 30px;
+			}
+		}
+	}
+	&__box{
+		@include pc{
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-around;
+			margin-bottom: 15rem;
+		}
+		&--bgw{
+			display: none;
+			@include pc{
+				display: inline;
+				max-width: 100%;
+				height: auto;
+				object-fit: contain;
+				position: absolute;
+				z-index: -1;
+				margin-top: -4rem;
+				left: -1.1rem;
+			}
+		}
+		&--img{
+			margin-top: 50px;
+			margin-bottom: 10px;
+			max-width: 100%;
+			height: auto;
+			object-fit: contain;
+			@include pc{
+				margin: 0;
+			}
+		}
+		&--textbox{
+			text-align: left;
+			@include pc{
+				padding-right: 5rem;
+			}
+		}
+		&--titletext{
+			font-family: $yumi_font;
+			color: $main_color;
+			font-size: 16px;
+			font-weight: 600;
+			@include pc{
+				font-size: 18px;
+			}
+		}
+		&--title{
+			font-family: $yumi_font;
+			font-size: 24px;
+			margin-bottom: 10px;
+			@include pc{
+				font-size: 32px;
+			}
+			br{
+				@include pc{
+					display: none;
+				}
+			}
+			span{
+				font-family: $noto_font;
+				font-size: 14px;
+				font-weight: normal;
+				@include pc{
+					font-size: 16px;
+				}
+			}
+		}
+		&--text{
+			line-height: 24px;
+			margin-bottom: 20px;
+			@include pc{
+				line-height: 27.2px;
+			}
+		}
+		&--price{
+			display: flex;
+			margin-bottom: 20px;
+		}
+		&--pricetext{
+			display: table;
+		}
+		&--targetbox{
+			background-color: #C9F3FA;
+			padding: 10px 30px 10px 10px;
+		}
+	}
+}
+/* 癒しのセラピスト養成コース */
+.healing{
+	&__titlebox{
+		margin-bottom: 30px;
+		@include pc{
+			margin-bottom: 10rem;
+		}
+		&--box{
+			font-family: $yumi_font;
+		@include pc{
+			display: inline-flex;
+			margin-bottom: 10px;
+		}
+		}
+		&--title{
+			font-size: 32px;
+			@include pc{
+				font-size: 40px;
+			}
+			br{
+				@include pc{
+					display: none;
+				}
+			}
+		}
+		&--text{
+			font-size: 16px;
+			color: #fff;
+			background-color: $main_color;
+			padding: 20px;
+			margin: 20px 10px;
+			font-weight: 600;
+			@include pc{
+				font-size: 20px;
+				width: 310px;
+				padding: 20px 0;
+				margin: 0 0 0 30px;
+			}
+		}
+		&--subtext{
+			text-align: left;
+			line-height: 21px;
+			@include pc{
+				text-align: center;
+			}
+		}
+	}
+	&__box{
+		@include pc{
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-around;
+			margin-bottom: 20rem;
+		}
+		&--bgw{
+			display: none;
+			@include pc{
+				display: inline;
+				max-width: 100%;
+				height: auto;
+				object-fit: contain;
+				position: absolute;
+				z-index: -1;
+				margin-top: -4rem;
+				left: -2.5rem;
+			}
+		}
+		&--img{
+			margin-top: 50px;
+			margin-bottom: 10px;
+			max-width: 100%;
+			height: auto;
+			object-fit: contain;
+			@include pc{
+				margin: 0;
+			}
+		}
+		&--textbox{
+			text-align: left;
+			@include pc{
+				padding-right: 5rem;
+			}
+		}
+		&--title{
+			font-family: $yumi_font;
+			font-size: 28px;
+			margin-bottom: 10px;
+			@include pc{
+				font-size: 32px;
+			}
+			br{
+				@include pc{
+					display: none;
+				}
+			}
+		}
+		&--text{
+			margin-bottom: 10px;
+		}
+		&--boldtext{
+			font-weight: bold;
+		}
+		&--table{
+			display: inline-table;
+		}
+		&--lfline{
+			padding-right: 10px;
+			width: 70px;
+			@include pc{
+				padding-right: 20px;
+				width: auto;
+			}
+		}
+		&--riline{
+			br{
+			@include pc{
+				 display: none;
+			 }
+			}
+		}
+		&--privilege{
+			width: 190px;
+			background-color: $accent_y;
+			padding: 10px;
+			font-size: 12px;
+			margin-top: 20px;
+			@include pc{
+				width: 220px;
+				font-size: 14px;
+			}
+		}
+	}
+}
+/* スケジュール */
+.leschedule{
+	font-family: $yumi_font;
+	&__title{
+		font-size: 26px;
+		background-color: #fff;
+		padding: 20px;
+		margin-bottom: 20px;
+		@include pc{
+			text-align: left;
+			font-size: 32px;
+			padding: 0;
+			background-color: transparent;
+			background: linear-gradient(transparent 50%, white 50%);
+			width: 660px;
+		}
+		br{
+			@include pc{
+				display: none;
+			}
+		}
+	}
+	&__subtitle{
+		font-size: 18px;
+		margin-bottom: 20px;
+		font-weight: 600;
+		@include pc{
+			display: flex;
+			align-items: center;
+			font-size: 24px;
+		}
+		&:after {
+			@include pc{
+				display: inline;
+			margin-left: 1rem;
+			border-top: 1px solid $font_color;
+			content: "";
+			flex-grow: 1;
+			}
+		}
+	}
+	&__flow{
+		@include pc{
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+		}
+		span{
+			display: inline-block;
+			margin: 20px 0;
+		  width: 20px;
+      height: 20px;
+      border: 2px solid;
+      border-color:  transparent transparent #583C27 #583C27;
+      transform: rotate(-45deg);
+			@include pc{
+      transform: rotate(-140deg);
+			}
+		}
+		&--circle{
+		 width: 250px;
+		 height: 250px;
+		 margin: 0 auto;
+		 border-radius: 50%;
+		 background-color: #fff;
+		 background-image: linear-gradient(to top, transparent 70%, #a1e3ee 0);
+		}
+		&--day{
+			font-size: 24px;
+			padding: 20px;
+		}
+		&--time{
+			font-family: $noto_font;
+			margin-top: 70px;
+		}
+		&--longtime{
+			font-family: $noto_font;
+			margin-top: 30px;
+		}
+	}
+}
+/* 開業支援 */
+.salon{
+	&__titlebox{
+			margin-bottom: 30px;
+		@include pc{
+			margin-bottom: 20rem;
+		}
+		br{
+			@include pc{
+				display: none;
+			}
+		}
+		&--title{
+			font-family: $yumi_font;
+			font-size: 34px;
+			margin-bottom: 10px;
+			@include pc{
+				font-size: 40px;
+			}
+		}
+		&--text{
+			font-size: 13px;
+			@include pc{
+				font-size: 16px;
+			}
+		}
+	}
+	&__box{
+		@include pc{
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-around;
+			margin-bottom: 20rem;
+		}
+		&--bgw{
+			display: none;
+			@include pc{
+				display: inline;
+				max-width: 100%;
+				height: auto;
+				object-fit: contain;
+				position: absolute;
+				z-index: -1;
+				margin-top: -6rem;
+				left: -2.5rem;
+			}
+		}
+		&--img{
+			margin-top: 50px;
+			margin-bottom: 20px;
+			max-width: 100%;
+			height: auto;
+			object-fit: contain;
+			@include pc{
+				margin: 0;
+			}
+		}
+		&--textbox{
+			text-align: left;
+			@include pc{
+				margin-right: 50px;
+			}
+		}
+		&--title{
+			font-family: $yumi_font;
+			font-size: 25px;
+			margin-bottom: 20px;
+			@include pc{
+				font-size: 32px;
+			}
+			
+			span{
+				font-family: $noto_font;
+				font-size: 14px;
+				font-weight: normal;
+				@include pc{
+					font-size: 16px;
+				}
+			}
+		}
+		&--br{
+				@include pc{
+					display: none;
+				}
+			}
+		&--text{
+			line-height: 24px;
+		}
+		&--item{
+	  	padding-left: 1em;
+	  	text-indent: -1em;
+			&:before{
+			content: '';
+	    width: 4px;
+	    height: 4px;
+	    display: inline-block;
+	    border-radius: 50%;
+	    background: #583C27;
+	    position: relative;
+	    left: -7px;
+	    top: -3px;
+			margin-left: 10px;
+		 }	
+		}
+		&--price{
+			display: flex;
+			margin: 20px 0;
+		}
+		&--pricetext{
+			display: table;
+		}
+	}
+}
+/* 料金 */
+.lprice{
+	&__titlebox{
+		margin-bottom: 20px;
+		&--title{
+			font-family: $yumi_font;
+			font-size: 32px;
+			margin-bottom: 10px;
+			@include pc{
+				font-size: 40px;
+			}
+		}
+		&--text{
+			font-size: 14px;
+		}
+	}
+	&__flexbox{
+		@include pc{
+		 display: inline-flex;
+		}
+	}
+	&__bigbox{
+		background-color: #fff;
+		margin-bottom: 30px;
+		padding: 50px 3%;
+		@include pc{
+			width: 440px;
+			height: 450px;
+			margin: 15px;
+		}
+	}
+	&__box{
+		&--title{
+			font-family: $yumi_font;
+			font-size: 26px;
+			margin-bottom: 20px;
+			@include pc{
+				font-size: 30px;
+				margin-bottom: 50px;
+			}
+		}
+		&--table{
+			display: inline-table;
+			font-size: 13px;
+			@include pc{
+				font-size: 16px;
+			}
+		}
+		&--column{
+			margin-bottom: 15px;
+			@include pc{
+				margin-bottom: 30px;
+			}
+		}
+		&--lfline{
+			text-align: left;
+		}
+		&--riline{
+			text-align: right;
+			padding-left: 10px;
+			@include pc{
+				padding-left: 20px;
+			}
+		}
+		&--list{
+			text-align: left;
+		}
+		&--item{
+		  padding-left: 1em;
+		  text-indent: -1em;
+			@include pc{
+				margin-bottom: 10px;
+			}
+			&:before{
+			content: '';
+	    width: 4px;
+	    height: 4px;
+	    display: inline-block;
+	    border-radius: 50%;
+	    background: #583C27;
+	    position: relative;
+	    left: -2px;
+	    top: -3px;
+			margin-left: 10px;
+		}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
